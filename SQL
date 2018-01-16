@@ -1,0 +1,122 @@
+
+-- phpMyAdmin SQL Dump
+-- version 3.5.2.2
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tempo de Geração: 16/01/2018 às 18:47:20
+-- Versão do Servidor: 10.1.24-MariaDB
+-- Versão do PHP: 5.2.17
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Banco de Dados: `u967339848_check`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `data`
+--
+
+CREATE TABLE IF NOT EXISTS `data` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(200) NOT NULL,
+  `sobrenome` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `senha` varchar(200) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `data`
+--
+
+INSERT INTO `data` (`id`, `nome`, `sobrenome`, `email`, `senha`) VALUES
+(1, 'Cesar Calheiro', 'Agusto', 'sistema@sistema.com', '12345');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `data_user`
+--
+
+CREATE TABLE IF NOT EXISTS `data_user` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `nome` varchar(200) NOT NULL,
+  `sobrenome` varchar(200) NOT NULL,
+  `rg` varchar(200) NOT NULL,
+  `cpf` varchar(200) NOT NULL,
+  `np` varchar(200) NOT NULL,
+  `comarca` varchar(200) NOT NULL,
+  `doc` varchar(200) NOT NULL,
+  `endereco` varchar(200) NOT NULL,
+  `status` varchar(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `data_user`
+--
+
+INSERT INTO `data_user` (`id`, `id_user`, `nome`, `sobrenome`, `rg`, `cpf`, `np`, `comarca`, `doc`, `endereco`, `status`) VALUES
+(112, 1, 'Bras cuba', 'Souza', '3333333', '23213233232323', '3333333', '', '', 'Rua José Onófre Pereira 1105', 'Ativo'),
+(113, 1, 'Empregado Anonimo', 'Cale', '23232323', '19264836433', '4444444', '', '', 'Rua calidas 1747455555', 'em processo'),
+(0, 1, 'Albert', 'Halt', '2234243434343434', '12233333', '1234565', '', '', 'Berlinerstr', 'em processo'),
+(0, 1, 'Albert', 'Halt', '2234243434343434', '12233333', '7548754', '', '', 'Berlinerstr', 'em processo'),
+(0, 1, 'Albert', 'Halt', '2234243434343434', '12233333', '3232323', '', '', 'Berlinerstr', 'em processo');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pic`
+--
+
+CREATE TABLE IF NOT EXISTS `pic` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pic` varchar(200) NOT NULL,
+  `comentario` varchar(200) NOT NULL,
+  `revisao` varchar(200) NOT NULL,
+  `np` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Extraindo dados da tabela `pic`
+--
+
+INSERT INTO `pic` (`id`, `pic`, `comentario`, `revisao`, `np`) VALUES
+(1, '727a47d5166679fd4ea3efc50e8b5c8a.PNG', 'Descrisao sobre cheque', '23.01.20173', '3333333'),
+(2, 'cc01dc0ed6b7277569156a521199ba13.PNG', 'delvovido por loja 1', '23.01.2017', '3333333'),
+(3, '4af06a3b417cf7405212c47744e8f0e3.jpg', 'em revisao ', '06.02.2017', '4444444'),
+(4, '75621dbbd7e38329a129302eb6148fa9.png', 'ekfnf,da', '23.01.2017', '7548754');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL,
+  `user` varchar(40) NOT NULL,
+  `pass` varchar(40) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `user`
+--
+
+INSERT INTO `user` (`id`, `user`, `pass`) VALUES
+(1, 'milton@gmx.com', '12345');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
